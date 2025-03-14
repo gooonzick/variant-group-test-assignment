@@ -1,5 +1,5 @@
 import { useEffect, useState, type ComponentProps } from "react";
-
+import cn from "clsx";
 import styles from "./textarea.module.css";
 
 type TextareaProps = ComponentProps<"textarea"> & {
@@ -10,6 +10,7 @@ export const Textarea: React.FC<TextareaProps> = ({
   label,
   rows = 9,
   maxLength,
+  className,
   ...props
 }) => {
   const [valueLength, setValueLength] = useState(
@@ -25,7 +26,7 @@ export const Textarea: React.FC<TextareaProps> = ({
   const hasExceededMaxLength = !!maxLength && valueLength > maxLength;
 
   return (
-    <label className={styles.container}>
+    <label className={cn(styles.container, className)}>
       {label && <span className={styles.label}>{label}</span>}
       <textarea
         {...props}

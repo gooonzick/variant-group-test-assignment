@@ -1,6 +1,6 @@
 import type { ComponentProps } from "react";
 import { cva, type VariantProps } from "class-variance-authority";
-
+import cn from "clsx";
 import styles from "./button.module.css";
 
 export const buttonVariants = cva(styles.base, {
@@ -21,4 +21,6 @@ export const Button: React.FC<ButtonProps> = ({
   className,
   variant,
   ...props
-}) => <button className={buttonVariants({ className, variant })} {...props} />;
+}) => (
+  <button className={cn(buttonVariants({ variant }), className)} {...props} />
+);
