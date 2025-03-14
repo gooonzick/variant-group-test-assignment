@@ -1,0 +1,20 @@
+.title {
+  font-size: 48px;
+  line-height: 60px;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.subtitle {
+  font-size: 36px;
+  line-height: 44px;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.body {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 28px;
+  color: var(--text-gray);
+}
