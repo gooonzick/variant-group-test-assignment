@@ -1,0 +1,17 @@
+.base {
+  height: 8px;
+  width: 8px;
+  border-radius: 50%;
+  background-color: var(--text-dark);
+  opacity: 24%;
+}
+
+.completed {
+  opacity: 100%;
+}
+
+.container {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}

@@ -8,10 +8,16 @@ export const buttonVariants = cva(styles.base, {
     variant: {
       primary: styles.primary,
       outline: styles.outline,
+      icon: styles.icon,
+    },
+    size: {
+      big: styles.big,
+      small: styles.small,
     },
   },
   defaultVariants: {
     variant: "primary",
+    size: "big",
   },
 });
 type ButtonProps = ComponentProps<"button"> &
@@ -20,7 +26,11 @@ type ButtonProps = ComponentProps<"button"> &
 export const Button: React.FC<ButtonProps> = ({
   className,
   variant,
+  size,
   ...props
 }) => (
-  <button className={cn(buttonVariants({ variant }), className)} {...props} />
+  <button
+    className={cn(buttonVariants({ variant, size }), className)}
+    {...props}
+  />
 );
