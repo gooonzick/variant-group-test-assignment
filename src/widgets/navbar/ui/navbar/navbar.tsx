@@ -12,7 +12,7 @@ export const Navbar: React.FC = () => {
       <div className={styles.right}>
         <div className={styles.stepper}>
           <Typography>3/5 applications generated</Typography>
-          <Stepper totalSteps={5} currentStep={3} />
+          <Stepper totalSteps={5} currentStep={5} />
         </div>
         <Button variant="icon">
           <IconHome />

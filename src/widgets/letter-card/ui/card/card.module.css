@@ -1,0 +1,41 @@
+.container {
+  height: 240px;
+  border-radius: 12px;
+  padding: 24px;
+  background-color: var(--background-light);
+  display: flex;
+  flex-direction: column;
+}
+
+.preview {
+  flex-grow: 1;
+  position: relative;
+}
+
+.content {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 5;
+}
+
+.fade {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: linear-gradient(
+    180deg,
+    rgba(242, 244, 247, 0) 0%,
+    var(--background-light) 100%
+  );
+}
+
+.footer {
+  flex-shrink: 0;
+  padding-top: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

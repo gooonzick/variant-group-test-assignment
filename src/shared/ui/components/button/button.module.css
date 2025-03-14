@@ -63,3 +63,15 @@
   height: 40px;
   padding: 10px;
 }
+
+.ghost {
+  padding: 0px;
+  background-color: transparent;
+  color: var(--text-dark-gray);
+  height: 24px;
+
+  &:disabled {
+    color: var(--text-light);
+    cursor: not-allowed;
+  }
+}
