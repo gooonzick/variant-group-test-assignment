@@ -17,7 +17,7 @@
 }
 
 .primary {
-  background-color: var(--primary);
+  background-color: var(--primary-dark);
   color: white;
 
   &:hover {
@@ -25,25 +25,21 @@
   }
 
   &:disabled {
-    background-color: var(--border-gray);
-    color: var(--text-gray);
+    background-color: var(--background-gray);
+    color: var(--text-light);
     cursor: not-allowed;
   }
 }
 
 .outline {
   background-color: white;
-  color: var(--text-dark-gray);
-  border: 1px solid var(--border-gray);
-
-  /* &:hover {
-    background-color: var(--background-gray);
-  } */
+  color: var(--text-medium);
+  border: 1px solid var(--background-gray);
 
   &:disabled {
     background-color: white;
-    color: var(--text-gray);
-    border: 1px solid var(--border-gray);
+    color: var(--text-light);
+    border: 1px solid var(--background-gray);
     cursor: not-allowed;
   }
 }
