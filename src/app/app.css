@@ -1,0 +1,47 @@
+:root {
+  --primary-green: #0d6e3f;
+  --success-green: #198754;
+  --light-green: #e9f6ef;
+
+  --background-light: #f8f9fa;
+  --border-gray: #eaecef;
+  --text-dark: #212529;
+
+  --warning-yellow: #fec107;
+  --error-red: #dc3545;
+  --highlight-blue: #0dcaf0;
+}
+
+body {
+  background-color: var(--background-light);
+  color: var(--text-dark);
+  font-family: "FixelText", sans-serif;
+}
+
+@font-face {
+  font-family: "FixelText";
+  src: url("/fonts/FixelText-Regular.woff2") format("woff2");
+  font-weight: 100 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "FixelText";
+  src: url("/fonts/FixelText-Medium.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "FixelText";
+  src: url("/fonts/FixelText-Semibold.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "FixelText";
+  src: url("/fonts/FixelText-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+}
