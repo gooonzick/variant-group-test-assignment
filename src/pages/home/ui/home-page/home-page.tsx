@@ -1,4 +1,5 @@
-import { Button } from "src/shared/ui/components/button";
+import { Link, href } from "react-router";
+import { buttonVariants } from "src/shared/ui/components/button";
 import { Typography } from "src/shared/ui/components/typography";
 import { IconPlus } from "src/shared/ui/icons";
 import { Card } from "src/widgets/letter-card/ui/card/card";
@@ -12,10 +13,13 @@ export const HomePage: React.FC = () => {
     <div>
       <div className={styles.header}>
         <Typography variant="title">Applications</Typography>
-        <Button size="small">
+        <Link
+          to={href("/new-letter")}
+          className={buttonVariants({ size: "small" })}
+        >
           <IconPlus />
           Create New
-        </Button>
+        </Link>
       </div>
       <div className={styles.container}>
         <Card content={content} />
