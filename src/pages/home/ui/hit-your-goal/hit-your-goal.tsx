@@ -2,6 +2,7 @@ import { Typography } from "src/shared/ui/components/typography";
 import styles from "./hit-your-goal.module.css";
 import { Button } from "src/shared/ui/components/button";
 import { IconPlus } from "src/shared/ui/icons";
+import { Stepper } from "src/shared/ui/components/stepper";
 
 export const HitYourGoal = () => {
   return (
@@ -17,7 +18,9 @@ export const HitYourGoal = () => {
           Create New
         </Button>
       </div>
-      <div></div>
+      <div>
+        <Stepper totalSteps={5} currentStep={3} variant="rectangle" />
+      </div>
     </div>
   );
 };

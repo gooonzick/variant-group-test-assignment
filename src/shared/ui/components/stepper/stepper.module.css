@@ -1,9 +1,19 @@
 .base {
+  background-color: var(--text-dark);
+  opacity: 24%;
+}
+
+.round {
   height: 8px;
   width: 8px;
   border-radius: 50%;
-  background-color: var(--text-dark);
-  opacity: 24%;
+}
+
+.rectangle {
+  width: 32px;
+  height: 8px;
+  border-radius: 4px;
+  opacity: 0.24;
 }
 
 .completed {
