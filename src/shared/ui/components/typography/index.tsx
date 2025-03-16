@@ -10,9 +10,14 @@ const typographyVariants = cva("", {
       subtitle: styles.subtitle,
       body: styles.body,
     },
+    color: {
+      black: styles.black,
+      gray: styles.gray,
+    },
   },
   defaultVariants: {
     variant: "body",
+    color: "black",
   },
 });
 
@@ -41,13 +46,14 @@ export const Typography = <T extends ElementType = "p">({
   as,
   className,
   variant = "body",
+  color,
   ...props
 }: TypographyProps<T>) => {
   const Component = as || variantElementMapping[variant || "body"];
 
   return (
     <Component
-      className={cn(typographyVariants({ variant }), className)}
+      className={cn(typographyVariants({ variant, color }), className)}
       {...props}
     />
   );

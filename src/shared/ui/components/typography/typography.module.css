@@ -18,3 +18,11 @@
   line-height: 28px;
   color: var(--text-gray);
 }
+
+.black {
+  color: var(--text-dark);
+}
+
+.gray {
+  color: var(--text-gray);
+}

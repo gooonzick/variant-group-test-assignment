@@ -1,0 +1,34 @@
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
+import { z } from "zod";
+
+export const MAX_DETAILS_LENGTH = 1200;
+const DEFAULT_VALUES = {
+  jobTitle: "",
+  company: "",
+  skills: "",
+  details: "",
+};
+
+const LetterFormSchema = z.object({
+  jobTitle: z.string().nonempty(),
+  company: z.string().nonempty(),
+  skills: z.string().nonempty(),
+  details: z.string().nonempty().max(MAX_DETAILS_LENGTH),
+});
+
+export type LetterFormValues = z.infer<typeof LetterFormSchema>;
+
+export const useLetterForm = (
+  { values = DEFAULT_VALUES }: { values?: LetterFormValues } = {
+    values: DEFAULT_VALUES,
+  }
+) => {
+  const form = useForm({
+    resolver: zodResolver(LetterFormSchema),
+    defaultValues: values || DEFAULT_VALUES,
+    values: values,
+  });
+
+  return form;
+};
