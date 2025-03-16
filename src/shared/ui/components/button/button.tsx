@@ -24,12 +24,7 @@ export const buttonVariants = cva(styles.base, {
 type ButtonProps = ComponentProps<"button"> &
   VariantProps<typeof buttonVariants>;
 
-export const Button: React.FC<ButtonProps> = ({
-  className,
-  variant,
-  size,
-  ...props
-}) => (
+export const Button = ({ className, variant, size, ...props }: ButtonProps) => (
   <button
     className={cn(buttonVariants({ variant, size }), className)}
     {...props}

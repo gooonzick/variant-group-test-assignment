@@ -6,7 +6,7 @@ type InputProps = ComponentProps<"input"> & {
   label?: string;
 };
 
-export const Input: React.FC<InputProps> = ({ label, className, ...props }) => {
+export const Input = ({ label, className, ...props }: InputProps) => {
   return (
     <label className={cn(styles.container, className)}>
       {label && <span className={styles.label}>{label}</span>}

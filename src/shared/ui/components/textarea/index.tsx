@@ -1,18 +1,18 @@
-import { useEffect, useState, type ComponentProps } from "react";
 import cn from "clsx";
+import { useEffect, useState, type ComponentProps } from "react";
 import styles from "./textarea.module.css";
 
 type TextareaProps = ComponentProps<"textarea"> & {
   label?: string;
 };
 
-export const Textarea: React.FC<TextareaProps> = ({
+export const Textarea = ({
   label,
   rows = 9,
   maxLength,
   className,
   ...props
-}) => {
+}: TextareaProps) => {
   const [valueLength, setValueLength] = useState(
     props.value ? String(props.value).length : 0
   );

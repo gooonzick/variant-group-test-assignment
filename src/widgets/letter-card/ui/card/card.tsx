@@ -7,7 +7,7 @@ type CardProps = {
   content: string;
 };
 
-export const Card: React.FC<CardProps> = ({ content }) => {
+export const Card = ({ content }: CardProps) => {
   return (
     <div className={styles.container}>
       <div className={styles.preview}>

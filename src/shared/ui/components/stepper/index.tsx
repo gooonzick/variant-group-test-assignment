@@ -16,11 +16,11 @@ type StepperProps = {
   currentStep: number;
 } & VariantProps<typeof stepperVariants>;
 
-export const Stepper: React.FC<StepperProps> = ({
+export const Stepper = ({
   currentStep,
   totalSteps,
   variant = "round",
-}) => {
+}: StepperProps) => {
   const steps = Array.from({ length: totalSteps });
 
   return (
