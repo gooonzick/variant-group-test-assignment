@@ -10,6 +10,7 @@ import {
 import type { Route } from "./+types/root";
 import "./app.css";
 import { Container } from "src/shared/ui/components/container";
+import { TanstackQueryProvider } from "./providers/tanstack-query";
 
 export const links: Route.LinksFunction = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -34,9 +35,11 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Links />
       </head>
       <body>
-        <Container>{children}</Container>
-        <ScrollRestoration />
-        <Scripts />
+        <TanstackQueryProvider>
+          <Container>{children}</Container>
+          <ScrollRestoration />
+          <Scripts />
+        </TanstackQueryProvider>
       </body>
     </html>
   );
