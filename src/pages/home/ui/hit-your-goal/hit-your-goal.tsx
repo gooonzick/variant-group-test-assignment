@@ -3,6 +3,7 @@ import { buttonVariants } from "src/shared/ui/components/button";
 import { Stepper } from "src/shared/ui/components/stepper";
 import { Typography } from "src/shared/ui/components/typography";
 import { IconPlus } from "src/shared/ui/icons";
+
 import styles from "./hit-your-goal.module.css";
 
 export const HitYourGoal = () => {

@@ -1,5 +1,6 @@
 import cn from "clsx";
-import { useEffect, useState, type ComponentProps } from "react";
+import { type ComponentProps,useEffect, useState } from "react";
+
 import styles from "./textarea.module.css";
 
 type TextareaProps = ComponentProps<"textarea"> & {

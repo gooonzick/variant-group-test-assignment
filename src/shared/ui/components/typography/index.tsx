@@ -1,6 +1,7 @@
-import type { ComponentProps, ElementType, ReactNode } from "react";
-import cn from "clsx";
 import { cva, type VariantProps } from "class-variance-authority";
+import cn from "clsx";
+import type { ComponentProps, ElementType, ReactNode } from "react";
+
 import styles from "./typography.module.css";
 
 const typographyVariants = cva("", {

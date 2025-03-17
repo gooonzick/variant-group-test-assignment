@@ -1,7 +1,8 @@
 import { Button } from "src/shared/ui/components/button";
 import { Typography } from "src/shared/ui/components/typography";
-import styles from "./card.module.css";
 import { IconCopy, IconTrash } from "src/shared/ui/icons";
+
+import styles from "./card.module.css";
 
 type CardProps = {
   content: string;

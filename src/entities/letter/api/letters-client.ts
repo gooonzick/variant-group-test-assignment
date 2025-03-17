@@ -1,4 +1,4 @@
-import { LettersStorageSchema, type CreateLetterPayload } from "../model/types";
+import { type CreateLetterPayload,LettersStorageSchema } from "../model/types";
 
 const LETTERS_STORAGE_KEY = "letters";
 

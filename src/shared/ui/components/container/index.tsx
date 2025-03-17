@@ -1,5 +1,6 @@
-import type { ElementType, ComponentProps, ReactNode } from "react";
 import cn from "clsx";
+import type { ComponentProps, ElementType, ReactNode } from "react";
+
 import styles from "./container.module.css";
 
 type ContainerProps<T extends ElementType = "div"> = {

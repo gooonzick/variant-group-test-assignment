@@ -1,6 +1,7 @@
-import cn from "clsx";
-import styles from "./stepper.module.css";
 import { cva, type VariantProps } from "class-variance-authority";
+import cn from "clsx";
+
+import styles from "./stepper.module.css";
 
 const stepperVariants = cva(styles.base, {
   variants: {

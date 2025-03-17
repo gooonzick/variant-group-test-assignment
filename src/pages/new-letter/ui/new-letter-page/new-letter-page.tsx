@@ -1,12 +1,13 @@
+import { useId } from "react";
+import { Controller } from "react-hook-form";
 import { Button } from "src/shared/ui/components/button";
 import { Input } from "src/shared/ui/components/input";
 import { Textarea } from "src/shared/ui/components/textarea";
 import { Typography } from "src/shared/ui/components/typography";
 import { IconCopy } from "src/shared/ui/icons";
-import styles from "./new-letter-page.module.css";
+
 import { MAX_DETAILS_LENGTH, useLetterForm } from "../../lib/use-letter-form";
-import { useId } from "react";
-import { Controller } from "react-hook-form";
+import styles from "./new-letter-page.module.css";
 
 export const NewLetterPage = () => {
   const form = useLetterForm();

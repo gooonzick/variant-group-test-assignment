@@ -1,5 +1,6 @@
-import type { ComponentProps } from "react";
 import cn from "clsx";
+import type { ComponentProps } from "react";
+
 import styles from "./input.module.css";
 
 type InputProps = ComponentProps<"input"> & {

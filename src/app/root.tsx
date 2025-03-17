@@ -1,3 +1,5 @@
+import "./app.css";
+
 import {
   isRouteErrorResponse,
   Links,
@@ -6,10 +8,9 @@ import {
   Scripts,
   ScrollRestoration,
 } from "react-router";
+import { Container } from "src/shared/ui/components/container";
 
 import type { Route } from "./+types/root";
-import "./app.css";
-import { Container } from "src/shared/ui/components/container";
 import { TanstackQueryProvider } from "./providers/tanstack-query";
 
 export const links: Route.LinksFunction = () => [
