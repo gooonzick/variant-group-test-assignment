@@ -16,7 +16,7 @@ export const HomePage = () => {
       <div className={styles.header}>
         <Typography variant="title">Applications</Typography>
         <Link
-          to={href("/new-letter")}
+          to={href("/letters/new")}
           className={buttonVariants({ size: "small" })}
         >
           <IconPlus />

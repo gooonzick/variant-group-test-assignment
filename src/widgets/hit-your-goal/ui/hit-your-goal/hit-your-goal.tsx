@@ -21,7 +21,7 @@ export const HitYourGoal = () => {
           Generate and send out couple more job applications today to get hired
           faster
         </Typography>
-        <Link to={href("/new-letter")} className={buttonVariants({})}>
+        <Link to={href("/letters/new")} className={buttonVariants({})}>
           <IconPlus />
           Create New
         </Link>
