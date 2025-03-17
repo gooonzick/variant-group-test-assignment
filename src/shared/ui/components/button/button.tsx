@@ -2,6 +2,7 @@ import { cva, type VariantProps } from "class-variance-authority";
 import cn from "clsx";
 import type { ComponentProps } from "react";
 
+import { Spinner } from "../spinner/spinner";
 import styles from "./button.module.css";
 
 export const buttonVariants = cva(styles.base, {
@@ -23,11 +24,26 @@ export const buttonVariants = cva(styles.base, {
   },
 });
 type ButtonProps = ComponentProps<"button"> &
-  VariantProps<typeof buttonVariants>;
+  VariantProps<typeof buttonVariants> & {
+    loading?: boolean;
+  };
 
-export const Button = ({ className, variant, size, ...props }: ButtonProps) => (
-  <button
-    className={cn(buttonVariants({ variant, size }), className)}
-    {...props}
-  />
-);
+export const Button = ({
+  className,
+  variant,
+  size,
+  children,
+  loading,
+  ...props
+}: ButtonProps) => {
+  return (
+    <button
+      className={cn(buttonVariants({ variant, size }), className)}
+      {...props}
+      disabled={loading || props.disabled}
+      aria-busy={loading}
+    >
+      {loading ? <Spinner /> : children}
+    </button>
+  );
+};

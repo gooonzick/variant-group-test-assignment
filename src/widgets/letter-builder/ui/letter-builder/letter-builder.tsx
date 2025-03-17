@@ -1,4 +1,8 @@
-import { useCreateLetterMutation, useLetterQuery } from "src/entities/letter";
+import {
+  useCreateLetterMutation,
+  useLetterQuery,
+  useUpdateLetterMutation,
+} from "src/entities/letter";
 import { Button } from "src/shared/ui/components/button";
 import { Typography } from "src/shared/ui/components/typography";
 import { IconCopy } from "src/shared/ui/icons";
@@ -15,9 +19,22 @@ export const LetterBuilder = ({ id }: Props) => {
   const letter = useLetterQuery({ id });
 
   const createLetter = useCreateLetterMutation();
+  const updateLetter = useUpdateLetterMutation();
 
-  const handleLetterFormSubmit = (values: LetterFormValues) => {
-    createLetter.mutate({
+  const handleLetterFormSubmit = async (values: LetterFormValues) => {
+    if (letter.data) {
+      await updateLetter.mutateAsync({
+        id: letter.data.id,
+        data: {
+          jobTitle: values.jobTitle,
+          companyName: values.companyName,
+          details: values.details,
+          skills: values.skills,
+        },
+      });
+      return;
+    }
+    await createLetter.mutateAsync({
       jobTitle: values.jobTitle,
       companyName: values.companyName,
       details: values.details,

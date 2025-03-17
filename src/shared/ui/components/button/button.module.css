@@ -41,6 +41,16 @@
     color: var(--text-light);
     cursor: not-allowed;
   }
+
+  &:disabled[aria-busy="true"] {
+    background-color: var(--primary-dark);
+    color: white;
+    cursor: wait;
+
+    &:hover {
+      opacity: 100%;
+    }
+  }
 }
 
 .outline {
@@ -54,6 +64,17 @@
     border: 1px solid var(--background-gray);
     cursor: not-allowed;
   }
+
+  &:disabled[aria-busy="true"] {
+    background-color: white;
+    color: var(--text-medium);
+    border: 1px solid var(--background-gray);
+    cursor: wait;
+
+    &:hover {
+      opacity: 100%;
+    }
+  }
 }
 
 .icon {
@@ -63,6 +84,28 @@
   width: 40px;
   height: 40px;
   padding: 10px;
+
+  &:hover {
+    opacity: 90%;
+  }
+
+  &:disabled {
+    background-color: white;
+    color: var(--text-light);
+    border: 1px solid var(--background-gray);
+    cursor: not-allowed;
+  }
+
+  &:disabled[aria-busy="true"] {
+    background-color: white;
+    color: var(--text-medium);
+    border: 1px solid var(--background-gray);
+    cursor: wait;
+
+    &:hover {
+      opacity: 100%;
+    }
+  }
 }
 
 .ghost {
@@ -74,5 +117,10 @@
   &:disabled {
     color: var(--text-light);
     cursor: not-allowed;
+  }
+
+  &:disabled[aria-busy="true"] {
+    color: var(--text-dark-gray);
+    cursor: wait;
   }
 }

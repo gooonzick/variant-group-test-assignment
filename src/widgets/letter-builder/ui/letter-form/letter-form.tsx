@@ -24,7 +24,7 @@ export const LetterForm = ({ values, onSubmit }: LetterFormProps) => {
 
   const {
     register,
-    formState: { isValid },
+    formState: { isValid, isSubmitting },
     control,
     handleSubmit,
   } = form;
@@ -71,7 +71,12 @@ export const LetterForm = ({ values, onSubmit }: LetterFormProps) => {
           )}
         />
       </form>
-      <Button type="submit" form={formId} disabled={!isValid}>
+      <Button
+        type="submit"
+        form={formId}
+        disabled={!isValid}
+        loading={isSubmitting}
+      >
         Generate Now
       </Button>
     </div>
