@@ -31,7 +31,7 @@ export const useCreateLetterMutation = () =>
     mutationKey: ["create-letter"],
     mutationFn: async (data: CreateLetterPayload) => {
       await new Promise((resolve) => setTimeout(resolve, 2000));
-      await client.createLetter(data);
+      return await client.createLetter(data);
     },
   });
 

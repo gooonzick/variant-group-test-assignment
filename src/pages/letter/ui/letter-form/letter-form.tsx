@@ -6,6 +6,7 @@ import { Textarea } from "src/shared/ui/components/textarea";
 import { Typography } from "src/shared/ui/components/typography";
 
 import {
+  type LetterFormSubmitHandler,
   type LetterFormValues,
   MAX_DETAILS_LENGTH,
   useLetterForm,
@@ -14,9 +15,10 @@ import styles from "./letter-form.module.css";
 
 type LetterFormProps = {
   values?: LetterFormValues;
+  onSubmit: LetterFormSubmitHandler;
 };
 
-export const LetterForm = ({ values }: LetterFormProps) => {
+export const LetterForm = ({ values, onSubmit }: LetterFormProps) => {
   const form = useLetterForm({ values });
   const formId = useId();
 
@@ -42,7 +44,7 @@ export const LetterForm = ({ values }: LetterFormProps) => {
       <form
         className={styles.form}
         id={formId}
-        onSubmit={handleSubmit(console.log)}
+        onSubmit={handleSubmit(onSubmit)}
       >
         <div className={styles.formRow}>
           <Input

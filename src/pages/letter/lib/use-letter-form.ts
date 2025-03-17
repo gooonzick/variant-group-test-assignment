@@ -18,6 +18,9 @@ const LetterFormSchema = z.object({
 });
 
 export type LetterFormValues = z.infer<typeof LetterFormSchema>;
+export type LetterFormSubmitHandler =
+  | ((values: LetterFormValues) => void)
+  | ((values: LetterFormValues) => Promise<void>);
 
 export const useLetterForm = (
   { values = DEFAULT_VALUES }: { values?: LetterFormValues } = {

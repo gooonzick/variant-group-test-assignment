@@ -12,5 +12,5 @@ export const LetterSchema = z.object({
 export const LettersStorageSchema = z.array(LetterSchema);
 
 export type Letter = z.infer<typeof LetterSchema>;
-export type CreateLetterPayload = Omit<Letter, "id">;
+export type CreateLetterPayload = Omit<Letter, "id" | "letter">;
 export type LettersStorage = z.infer<typeof LettersStorageSchema>;
