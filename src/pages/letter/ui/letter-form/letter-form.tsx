@@ -28,7 +28,7 @@ export const LetterForm = ({ values }: LetterFormProps) => {
   } = form;
 
   const title = values
-    ? `${values.jobTitle}, ${values.company}`
+    ? `${values.jobTitle}, ${values.companyName}`
     : "New application";
   const titleColor = values ? "gray" : "black";
 
@@ -53,7 +53,7 @@ export const LetterForm = ({ values }: LetterFormProps) => {
           <Input
             label="Company"
             className={styles.formInput}
-            {...register("company")}
+            {...register("companyName")}
           />
         </div>
         <Input label="I'm good at..." {...register("skills")} />

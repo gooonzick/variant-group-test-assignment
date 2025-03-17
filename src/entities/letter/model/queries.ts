@@ -15,7 +15,7 @@ export const useLettersQuery = () =>
     },
   });
 
-export const useLetterQuery = (id: string | undefined | null) =>
+export const useLetterQuery = ({ id }: { id: string | undefined | null }) =>
   useQuery({
     queryKey: ["letter", id],
     queryFn: async () => {

@@ -5,14 +5,14 @@ import { z } from "zod";
 export const MAX_DETAILS_LENGTH = 1200;
 const DEFAULT_VALUES = {
   jobTitle: "",
-  company: "",
+  companyName: "",
   skills: "",
   details: "",
 };
 
 const LetterFormSchema = z.object({
   jobTitle: z.string().nonempty(),
-  company: z.string().nonempty(),
+  companyName: z.string().nonempty(),
   skills: z.string().nonempty(),
   details: z.string().nonempty().max(MAX_DETAILS_LENGTH),
 });
