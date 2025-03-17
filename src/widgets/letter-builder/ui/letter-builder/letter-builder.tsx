@@ -5,30 +5,24 @@ import { IconCopy } from "src/shared/ui/icons";
 
 import type { LetterFormValues } from "../../lib/use-letter-form";
 import { LetterForm } from "../letter-form/letter-form";
-import styles from "./letter-page.module.css";
+import styles from "./letter-builder.module.css";
 
 type Props = {
-  id: string;
+  id?: string;
 };
 
-export const LetterPage = ({ id }: Props) => {
+export const LetterBuilder = ({ id }: Props) => {
   const letter = useLetterQuery({ id });
 
   const createLetter = useCreateLetterMutation();
 
   const handleLetterFormSubmit = (values: LetterFormValues) => {
-    console.log("🚀 ~ handleLetterFormSubmit ~ values:", values);
-    createLetter.mutate(
-      {
-        jobTitle: values.jobTitle,
-        companyName: values.companyName,
-        details: values.details,
-        skills: values.skills,
-      },
-      {
-        onError: console.error,
-      }
-    );
+    createLetter.mutate({
+      jobTitle: values.jobTitle,
+      companyName: values.companyName,
+      details: values.details,
+      skills: values.skills,
+    });
   };
 
   const content = createLetter.data?.letter ?? letter.data?.letter;

@@ -3,9 +3,9 @@ import { useLettersQuery } from "src/entities/letter";
 import { buttonVariants } from "src/shared/ui/components/button";
 import { Typography } from "src/shared/ui/components/typography";
 import { IconPlus } from "src/shared/ui/icons";
+import { HitYourGoal } from "src/widgets/hit-your-goal";
 import { Card } from "src/widgets/letter-card/ui/card/card";
 
-import { HitYourGoal } from "../hit-your-goal/hit-your-goal";
 import styles from "./home-page.module.css";
 
 export const HomePage = () => {
