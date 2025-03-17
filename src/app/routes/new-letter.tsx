@@ -1,4 +1,4 @@
-import { NewLetterPage } from "src/pages/new-letter";
+import { LetterPage } from "src/pages/letter";
 import { Navbar } from "src/widgets/navbar";
 
 export default function Page() {
@@ -11,7 +11,7 @@ export default function Page() {
       }}
     >
       <Navbar />
-      <NewLetterPage />
+      <LetterPage />
     </div>
   );
 }

@@ -7,9 +7,9 @@ import { Typography } from "src/shared/ui/components/typography";
 import { IconCopy } from "src/shared/ui/icons";
 
 import { MAX_DETAILS_LENGTH, useLetterForm } from "../../lib/use-letter-form";
-import styles from "./new-letter-page.module.css";
+import styles from "./letter-page.module.css";
 
-export const NewLetterPage = () => {
+export const LetterPage = () => {
   const form = useLetterForm();
   const formId = useId();
 

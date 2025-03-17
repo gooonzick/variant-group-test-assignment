@@ -1,4 +1,5 @@
 import { href, Link } from "react-router";
+import { useLettersQuery } from "src/entities/letter";
 import { buttonVariants } from "src/shared/ui/components/button";
 import { Stepper } from "src/shared/ui/components/stepper";
 import { Typography } from "src/shared/ui/components/typography";
@@ -7,6 +8,11 @@ import { IconPlus } from "src/shared/ui/icons";
 import styles from "./hit-your-goal.module.css";
 
 export const HitYourGoal = () => {
+  const letters = useLettersQuery();
+
+  const totalLetters = letters.data?.length ?? 0;
+  const stepperLabel = `${totalLetters} out of 5`;
+
   return (
     <div className={styles.container}>
       <div className={styles.content}>
@@ -21,8 +27,12 @@ export const HitYourGoal = () => {
         </Link>
       </div>
       <div className={styles.stepper}>
-        <Stepper totalSteps={5} currentStep={3} variant="rectangle" />
-        <Typography>3 out of 5</Typography>
+        <Stepper
+          totalSteps={5}
+          currentStep={totalLetters}
+          variant="rectangle"
+        />
+        <Typography>{stepperLabel}</Typography>
       </div>
     </div>
   );
