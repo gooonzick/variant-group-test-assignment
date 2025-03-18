@@ -4,6 +4,7 @@ import { Button } from "src/shared/ui/components/button";
 import { Input } from "src/shared/ui/components/input";
 import { Textarea } from "src/shared/ui/components/textarea";
 import { Typography } from "src/shared/ui/components/typography";
+import { IconRepeat } from "src/shared/ui/icons";
 
 import {
   type LetterFormSubmitHandler,
@@ -16,9 +17,10 @@ import styles from "./letter-form.module.css";
 type LetterFormProps = {
   values?: LetterFormValues;
   onSubmit: LetterFormSubmitHandler;
+  content?: string;
 };
 
-export const LetterForm = ({ values, onSubmit }: LetterFormProps) => {
+export const LetterForm = ({ values, onSubmit, content }: LetterFormProps) => {
   const form = useLetterForm({ values });
   const formId = useId();
 
@@ -33,6 +35,7 @@ export const LetterForm = ({ values, onSubmit }: LetterFormProps) => {
     ? `${values.jobTitle}, ${values.companyName}`
     : "New application";
   const titleColor = values ? "gray" : "black";
+  const submitBtnVariant = content ? "outline" : "primary";
 
   return (
     <div className={styles.container}>
@@ -76,8 +79,16 @@ export const LetterForm = ({ values, onSubmit }: LetterFormProps) => {
         form={formId}
         disabled={!isValid}
         loading={isSubmitting}
+        variant={submitBtnVariant}
       >
-        Generate Now
+        {content ? (
+          <>
+            <IconRepeat />
+            Try Again
+          </>
+        ) : (
+          "Generate Now"
+        )}
       </Button>
     </div>
   );

@@ -30,7 +30,7 @@ export const LetterBuilder = ({ onSubmit, letter, values }: Props) => {
   return (
     <div className={styles.root}>
       <div ref={ref}>
-        <LetterForm values={values} onSubmit={onSubmit} />
+        <LetterForm values={values} onSubmit={onSubmit} content={letter} />
       </div>
       <div className={styles.letterPreview} style={{ height }}>
         <div className={styles.content}>
