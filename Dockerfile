@@ -10,7 +10,6 @@ ENV VITE_OPEN_AI_KEY=${VITE_OPEN_AI_KEY}
 ENV PNPM_HOME="/pnpm"
 ENV PATH="$PNPM_HOME:$PATH"
 RUN npm install -g pnpm
-RUN apk add --no-cache git
 WORKDIR /app
 COPY package.json pnpm-lock.yaml ./
 RUN pnpm install
