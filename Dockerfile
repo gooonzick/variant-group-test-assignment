@@ -1,22 +1,25 @@
-FROM node:20-alpine AS development-dependencies-env
-COPY . /app
-WORKDIR /app
-RUN npm ci
+# Stage 1: Build the React app
+FROM node:20.17.0-alpine AS build
 
-FROM node:20-alpine AS production-dependencies-env
-COPY ./package.json package-lock.json /app/
-WORKDIR /app
-RUN npm ci --omit=dev
+# ARGs
+ARG VITE_OPEN_AI_KEY=${VITE_OPEN_AI_KEY}
 
-FROM node:20-alpine AS build-env
-COPY . /app/
-COPY --from=development-dependencies-env /app/node_modules /app/node_modules
-WORKDIR /app
-RUN npm run build
+# ENVs
+ENV VITE_OPEN_AI_KEY=${VITE_OPEN_AI_KEY}
 
-FROM node:20-alpine
-COPY ./package.json package-lock.json /app/
-COPY --from=production-dependencies-env /app/node_modules /app/node_modules
-COPY --from=build-env /app/build /app/build
+ENV PNPM_HOME="/pnpm"
+ENV PATH="$PNPM_HOME:$PATH"
+RUN npm install -g pnpm
+RUN apk add --no-cache git
 WORKDIR /app
-CMD ["npm", "run", "start"]
+COPY package.json pnpm-lock.yaml ./
+RUN pnpm install
+COPY . ./
+RUN pnpm build
+
+# Stage 2: Serve the React app with Nginx
+FROM nginx:1.25-alpine
+COPY --from=build /app/build/client /usr/share/nginx/html
+COPY ./nginx/nginx.conf /etc/nginx/nginx.conf
+EXPOSE 80
+ENTRYPOINT ["nginx", "-g", "daemon off;"]
