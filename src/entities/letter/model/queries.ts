@@ -1,22 +1,20 @@
-import { useMutation, useQuery } from "@tanstack/react-query";
+import { queryOptions, useMutation, useQuery } from "@tanstack/react-query";
 
 import { LettersApiClient } from "../api/letters-client";
 import type { CreateLetterPayload } from "./types";
 
 const client = new LettersApiClient();
 
-export const useLettersQuery = () =>
-  useQuery({
-    queryKey: ["letters"],
-    queryFn: async () => {
-      const data = await client.getLetters();
+export const lettersOptions = queryOptions({
+  queryKey: ["letters"],
+  queryFn: async () => {
+    const data = await client.getLetters();
 
-      return data;
-    },
-  });
-
-export const useLetterQuery = ({ id }: { id: string | undefined | null }) =>
-  useQuery({
+    return data;
+  },
+});
+export const letterOptions = (id: string | undefined | null) =>
+  queryOptions({
     queryKey: ["letter", id],
     queryFn: async () => {
       const data = await client.getLetter(id!);
@@ -25,6 +23,11 @@ export const useLetterQuery = ({ id }: { id: string | undefined | null }) =>
     },
     enabled: !!id,
   });
+
+export const useLettersQuery = () => useQuery(lettersOptions);
+
+export const useLetterQuery = ({ id }: { id: string | undefined | null }) =>
+  useQuery(letterOptions(id));
 
 export const useCreateLetterMutation = () =>
   useMutation({

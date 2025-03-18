@@ -1,9 +1,9 @@
-import { LetterBuilder } from "src/widgets/letter-builder";
 import { Navbar } from "src/widgets/navbar";
+import { UpdateLetterForm } from "src/widgets/update-letter-form";
 
 import type { Route } from "./+types/letter";
 
-export const Page = ({ params }: Route.ComponentProps) => {
+export default function Page({ params }: Route.ComponentProps) {
   return (
     <div
       style={{
@@ -13,7 +13,7 @@ export const Page = ({ params }: Route.ComponentProps) => {
       }}
     >
       <Navbar />
-      <LetterBuilder id={params.id} />
+      <UpdateLetterForm id={params.id} />
     </div>
   );
-};
+}

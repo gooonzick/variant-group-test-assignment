@@ -1,4 +1,4 @@
-import { LetterBuilder } from "src/widgets/letter-builder";
+import { CreateLetterForm } from "src/widgets/create-letter-form";
 import { Navbar } from "src/widgets/navbar";
 
 export default function Page() {
@@ -11,7 +11,7 @@ export default function Page() {
       }}
     >
       <Navbar />
-      <LetterBuilder />
+      <CreateLetterForm />
     </div>
   );
 }
