@@ -1,7 +1,7 @@
 import cn from "clsx";
 import type { ComponentProps } from "react";
 
-import styles from "./input.module.css";
+import styles from "./text-input.module.css";
 
 type InputProps = ComponentProps<"input"> & {
   label?: string;
