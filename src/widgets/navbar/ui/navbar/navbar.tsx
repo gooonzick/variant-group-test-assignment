@@ -1,6 +1,6 @@
 import { href, Link } from "react-router";
 import { useLettersQuery } from "src/entities/letter";
-import { Button } from "src/shared/ui/components/button";
+import { buttonVariants } from "src/shared/ui/components/button";
 import { Stepper } from "src/shared/ui/components/stepper";
 import { Typography } from "src/shared/ui/components/typography";
 import {
@@ -36,9 +36,9 @@ export const Navbar = () => {
             <Stepper totalSteps={5} currentStep={totalLetters} />
           )}
         </div>
-        <Button variant="icon">
+        <Link className={buttonVariants({ variant: "icon" })} to={href("/")}>
           <IconHome />
-        </Button>
+        </Link>
       </div>
     </nav>
   );

@@ -50,3 +50,12 @@ export const useUpdateLetterMutation = () =>
       return await client.updateLetter(id, data);
     },
   });
+
+export const useDeleteLetterMutation = () =>
+  useMutation({
+    mutationKey: ["delete-letter"],
+    mutationFn: async (id: string) => {
+      await new Promise((resolve) => setTimeout(resolve, 1500));
+      return await client.deleteLetter(id);
+    },
+  });
