@@ -1,5 +1,4 @@
-import { HomePage } from "src/pages/home/ui/home-page/home-page";
-import { Navbar } from "src/widgets/navbar";
+import { HomePage } from "src/pages/home";
 
 export function meta() {
   return [
@@ -9,16 +8,5 @@ export function meta() {
 }
 
 export default function Page() {
-  return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        gap: "32px",
-      }}
-    >
-      <Navbar />
-      <HomePage />
-    </div>
-  );
+  return <HomePage />;
 }

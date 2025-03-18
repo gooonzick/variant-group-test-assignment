@@ -16,3 +16,12 @@
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
+.cardWrapper {
+  position: relative;
+}
+
+.link {
+  position: absolute;
+  inset: 0;
+}

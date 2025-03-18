@@ -13,6 +13,12 @@ export const HitYourGoal = () => {
   const totalLetters = letters.data?.length ?? 0;
   const stepperLabel = `${totalLetters} out of 5`;
 
+  const isGoalReached = totalLetters > 5;
+
+  if (isGoalReached) {
+    return null;
+  }
+
   return (
     <div className={styles.container}>
       <div className={styles.content}>
