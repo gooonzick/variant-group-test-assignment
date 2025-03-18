@@ -25,3 +25,10 @@
   position: absolute;
   inset: 0;
 }
+
+.createLabel {
+  display: none;
+  @media (min-width: 768px) {
+    display: inline;
+  }
+}

@@ -13,12 +13,16 @@
 }
 
 .content {
-  width: 480px;
+  width: 100%;
   text-align: center;
   display: flex;
   align-items: center;
   flex-direction: column;
   gap: 16px;
+
+  @media (min-width: 768px) {
+    width: 480px;
+  }
 }
 
 .stepper {

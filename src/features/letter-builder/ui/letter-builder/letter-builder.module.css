@@ -1,33 +1,12 @@
 .root {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  column-gap: 32px;
-}
+  grid-template-columns: repeat(1, 1fr);
+  row-gap: 32px;
 
-.container {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.header {
-  border-bottom: 1px solid var(--background-soft);
-  padding-bottom: 16px;
-}
-
-.form {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.formRow {
-  display: flex;
-  gap: 16px;
-}
-
-.formInput {
-  flex: 1;
+  @media (min-width: 768px) {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 32px;
+  }
 }
 
 .letterPreview {

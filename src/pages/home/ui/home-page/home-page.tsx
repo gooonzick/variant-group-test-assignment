@@ -19,7 +19,7 @@ export const HomePage = () => {
           className={buttonVariants({ size: "small" })}
         >
           <IconPlus />
-          Create New
+          <span className={styles.createLabel}>Create New</span>
         </Link>
       </div>
       {!!letters.data && (

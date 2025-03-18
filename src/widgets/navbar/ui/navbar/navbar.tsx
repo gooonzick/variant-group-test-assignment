@@ -3,7 +3,7 @@ import { useLettersQuery } from "src/entities/letter";
 import { Button } from "src/shared/ui/components/button";
 import { Stepper } from "src/shared/ui/components/stepper";
 import { Typography } from "src/shared/ui/components/typography";
-import { IconHome, IconLogoWithText } from "src/shared/ui/icons";
+import { IconHome, IconLogo, IconLogoWithText } from "src/shared/ui/icons";
 
 import styles from "./navbar.module.css";
 
@@ -16,11 +16,14 @@ export const Navbar = () => {
   return (
     <nav className={styles.container}>
       <Link to={href("/")}>
-        <IconLogoWithText title="Alt+Shift" />
+        <IconLogoWithText title="Alt+Shift" className={styles.logoDesktop} />
+        <IconLogo className={styles.logoMobile} />
       </Link>
       <div className={styles.right}>
         <div className={styles.stepper}>
-          <Typography>{stepperLabel}</Typography>
+          <Typography className={styles.stepperLabel}>
+            {stepperLabel}
+          </Typography>
           <Stepper totalSteps={5} currentStep={totalLetters} />
         </div>
         <Button variant="icon">

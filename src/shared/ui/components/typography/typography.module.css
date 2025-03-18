@@ -1,22 +1,37 @@
 .title {
-  font-size: 48px;
-  line-height: 60px;
-  font-weight: 600;
-  color: var(--text-dark);
-}
-
-.subtitle {
   font-size: 36px;
   line-height: 44px;
   font-weight: 600;
   color: var(--text-dark);
+
+  @media (min-width: 1024px) {
+    font-size: 48px;
+    line-height: 60px;
+  }
+}
+
+.subtitle {
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 600;
+  color: var(--text-dark);
+
+  @media (min-width: 1024px) {
+    font-size: 36px;
+    line-height: 44px;
+  }
 }
 
 .body {
   font-weight: 400;
-  font-size: 18px;
-  line-height: 28px;
+  font-size: 16px;
+  line-height: 24px;
   color: var(--text-gray);
+
+  @media (min-width: 1024px) {
+    font-size: 18px;
+    line-height: 28px;
+  }
 }
 
 .black {
