@@ -8,7 +8,8 @@ import {
   Scripts,
   ScrollRestoration,
 } from "react-router";
-import { Container } from "~/shared/ui/components/container";
+
+import { Container } from "~/shared/ui/components";
 
 import type { Route } from "./+types/root";
 import { TanstackQueryProvider } from "./providers/tanstack-query";

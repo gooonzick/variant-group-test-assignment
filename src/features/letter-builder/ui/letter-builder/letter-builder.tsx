@@ -1,8 +1,8 @@
 import { useRef } from "react";
 import { FormProvider } from "react-hook-form";
+
 import { useResizeObserver } from "~/shared/hooks/use-resize-observer";
-import { Button } from "~/shared/ui/components/button";
-import { Typography } from "~/shared/ui/components/typography";
+import { Button, Typography } from "~/shared/ui/components";
 import { IconCopy } from "~/shared/ui/icons";
 
 import {

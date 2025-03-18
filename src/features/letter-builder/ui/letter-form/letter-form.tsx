@@ -1,9 +1,7 @@
 import { useId } from "react";
 import { Controller } from "react-hook-form";
-import { Button } from "~/shared/ui/components/button";
-import { Input } from "~/shared/ui/components/input";
-import { Textarea } from "~/shared/ui/components/textarea";
-import { Typography } from "~/shared/ui/components/typography";
+
+import { Button, Input, Textarea, Typography } from "~/shared/ui/components";
 import { IconRepeat } from "~/shared/ui/icons";
 
 import {

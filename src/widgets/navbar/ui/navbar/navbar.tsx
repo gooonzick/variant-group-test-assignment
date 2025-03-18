@@ -1,8 +1,7 @@
 import { href, Link } from "react-router";
+
 import { useLettersQuery } from "~/entities/letter";
-import { buttonVariants } from "~/shared/ui/components/button";
-import { Stepper } from "~/shared/ui/components/stepper";
-import { Typography } from "~/shared/ui/components/typography";
+import { buttonVariants, Stepper, Typography } from "~/shared/ui/components";
 import {
   IconCheck,
   IconHome,
