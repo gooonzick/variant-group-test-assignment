@@ -5,4 +5,5 @@ export { default as IconLogo } from "./logo.svg?react";
 export { default as IconLogoWithText } from "./logo-with-text.svg?react";
 export { default as IconPlus } from "./plus.svg?react";
 export { default as IconRepeat } from "./repeat.svg?react";
+export { default as IconSphere } from "./sphere.svg?react";
 export { default as IconTrash } from "./trash.svg?react";

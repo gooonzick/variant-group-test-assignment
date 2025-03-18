@@ -1,5 +1,5 @@
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
+import { useForm, useFormContext } from "react-hook-form";
 import { z } from "zod";
 
 export const MAX_DETAILS_LENGTH = 1200;
@@ -35,3 +35,5 @@ export const useLetterForm = (
 
   return form;
 };
+
+export const useLetterFormContext = () => useFormContext<LetterFormValues>();

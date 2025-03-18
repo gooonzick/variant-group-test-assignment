@@ -10,7 +10,7 @@ import {
   type LetterFormSubmitHandler,
   type LetterFormValues,
   MAX_DETAILS_LENGTH,
-  useLetterForm,
+  useLetterFormContext,
 } from "../../lib/use-letter-form";
 import styles from "./letter-form.module.css";
 
@@ -21,7 +21,7 @@ type LetterFormProps = {
 };
 
 export const LetterForm = ({ values, onSubmit, content }: LetterFormProps) => {
-  const form = useLetterForm({ values });
+  const form = useLetterFormContext();
   const formId = useId();
 
   const {
