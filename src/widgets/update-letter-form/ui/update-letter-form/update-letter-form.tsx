@@ -1,4 +1,9 @@
-import { useLetterQuery, useUpdateLetterMutation } from "src/entities/letter";
+import { useQueryClient } from "@tanstack/react-query";
+import {
+  letterOptions,
+  useLetterQuery,
+  useUpdateLetterMutation,
+} from "src/entities/letter";
 import {
   LetterBuilder,
   type LetterFormValues,
@@ -9,6 +14,7 @@ type Props = {
 };
 
 export const UpdateLetterForm = ({ id }: Props) => {
+  const queryClient = useQueryClient();
   const { data } = useLetterQuery({ id });
   const updateLetter = useUpdateLetterMutation();
 
@@ -17,10 +23,17 @@ export const UpdateLetterForm = ({ id }: Props) => {
       return;
     }
 
-    await updateLetter.mutateAsync({
-      id: id,
-      data: values,
-    });
+    await updateLetter.mutateAsync(
+      {
+        id: id,
+        data: values,
+      },
+      {
+        onSuccess: async (data) => {
+          await queryClient.invalidateQueries(letterOptions(data.id));
+        },
+      }
+    );
   };
 
   const formValues = data ?? undefined;

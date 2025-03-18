@@ -49,6 +49,6 @@ export const useUpdateLetterMutation = () =>
       data: CreateLetterPayload;
     }) => {
       await new Promise((resolve) => setTimeout(resolve, 2000));
-      await client.updateLetter(id, data);
+      return await client.updateLetter(id, data);
     },
   });

@@ -49,6 +49,8 @@ export class LettersApiClient {
     });
 
     localStorage.setItem(LETTERS_STORAGE_KEY, JSON.stringify(updatedLetters));
+
+    return updatedLetters.find((letter) => letter.id === id)!;
   }
 
   async deleteLetter(id: string) {
