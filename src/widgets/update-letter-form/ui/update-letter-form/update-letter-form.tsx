@@ -3,11 +3,11 @@ import {
   letterOptions,
   useLetterQuery,
   useUpdateLetterMutation,
-} from "src/entities/letter";
+} from "~/entities/letter";
 import {
   LetterBuilder,
   type LetterFormValues,
-} from "src/features/letter-builder";
+} from "~/features/letter-builder";
 
 type Props = {
   id: string | undefined | null;

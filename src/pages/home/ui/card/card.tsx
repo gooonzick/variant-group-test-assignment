@@ -1,10 +1,10 @@
 import { useQueryClient } from "@tanstack/react-query";
 import { href, Link } from "react-router";
-import type { Letter } from "src/entities/letter";
-import { lettersOptions, useDeleteLetterMutation } from "src/entities/letter";
-import { Button } from "src/shared/ui/components/button";
-import { Typography } from "src/shared/ui/components/typography";
-import { IconCopy, IconTrash } from "src/shared/ui/icons";
+import type { Letter } from "~/entities/letter";
+import { lettersOptions, useDeleteLetterMutation } from "~/entities/letter";
+import { Button } from "~/shared/ui/components/button";
+import { Typography } from "~/shared/ui/components/typography";
+import { IconCopy, IconTrash } from "~/shared/ui/icons";
 
 import styles from "./card.module.css";
 

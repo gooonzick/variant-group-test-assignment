@@ -1,9 +1,9 @@
 import { href, Link } from "react-router";
-import { useLettersQuery } from "src/entities/letter";
-import { buttonVariants } from "src/shared/ui/components/button";
-import { Stepper } from "src/shared/ui/components/stepper";
-import { Typography } from "src/shared/ui/components/typography";
-import { IconPlus } from "src/shared/ui/icons";
+import { useLettersQuery } from "~/entities/letter";
+import { buttonVariants } from "~/shared/ui/components/button";
+import { Stepper } from "~/shared/ui/components/stepper";
+import { Typography } from "~/shared/ui/components/typography";
+import { IconPlus } from "~/shared/ui/icons";
 
 import styles from "./hit-your-goal.module.css";
 

@@ -1,4 +1,4 @@
-import { UpdateLetterForm } from "src/widgets/update-letter-form";
+import { UpdateLetterForm } from "~/widgets/update-letter-form";
 
 import type { Route } from "./+types/letter";
 

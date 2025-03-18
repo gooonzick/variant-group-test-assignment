@@ -1,6 +1,7 @@
 import { Outlet } from "react-router";
-import { HitYourGoal } from "src/widgets/hit-your-goal";
-import { Navbar } from "src/widgets/navbar";
+
+import { HitYourGoal } from "~/widgets/hit-your-goal";
+import { Navbar } from "~/widgets/navbar";
 
 import styles from "./root-layout.module.css";
 

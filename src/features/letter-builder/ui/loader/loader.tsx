@@ -1,4 +1,4 @@
-import { IconSphere } from "src/shared/ui/icons";
+import { IconSphere } from "~/shared/ui/icons";
 
 import styles from "./loader.module.css";
 

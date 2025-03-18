@@ -1,4 +1,4 @@
-import { openAiClient } from "src/shared/lib/open-ai-client";
+import { openAiClient } from "~/shared/lib/open-ai-client";
 
 import { type CreateLetterPayload, LettersStorageSchema } from "../model/types";
 

@@ -1,10 +1,10 @@
 import { useId } from "react";
 import { Controller } from "react-hook-form";
-import { Button } from "src/shared/ui/components/button";
-import { Input } from "src/shared/ui/components/input";
-import { Textarea } from "src/shared/ui/components/textarea";
-import { Typography } from "src/shared/ui/components/typography";
-import { IconRepeat } from "src/shared/ui/icons";
+import { Button } from "~/shared/ui/components/button";
+import { Input } from "~/shared/ui/components/input";
+import { Textarea } from "~/shared/ui/components/textarea";
+import { Typography } from "~/shared/ui/components/typography";
+import { IconRepeat } from "~/shared/ui/icons";
 
 import {
   type LetterFormSubmitHandler,

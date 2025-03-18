@@ -4,11 +4,11 @@ import {
   letterOptions,
   lettersOptions,
   useCreateLetterMutation,
-} from "src/entities/letter";
+} from "~/entities/letter";
 import {
   LetterBuilder,
   type LetterFormValues,
-} from "src/features/letter-builder";
+} from "~/features/letter-builder";
 
 export const CreateLetterForm = () => {
   const navigate = useNavigate();

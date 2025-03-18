@@ -1,9 +1,9 @@
 import { useRef } from "react";
 import { FormProvider } from "react-hook-form";
-import { useResizeObserver } from "src/shared/hooks/use-resize-observer";
-import { Button } from "src/shared/ui/components/button";
-import { Typography } from "src/shared/ui/components/typography";
-import { IconCopy } from "src/shared/ui/icons";
+import { useResizeObserver } from "~/shared/hooks/use-resize-observer";
+import { Button } from "~/shared/ui/components/button";
+import { Typography } from "~/shared/ui/components/typography";
+import { IconCopy } from "~/shared/ui/icons";
 
 import {
   type LetterFormSubmitHandler,

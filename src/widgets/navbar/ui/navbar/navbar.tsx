@@ -1,14 +1,14 @@
 import { href, Link } from "react-router";
-import { useLettersQuery } from "src/entities/letter";
-import { buttonVariants } from "src/shared/ui/components/button";
-import { Stepper } from "src/shared/ui/components/stepper";
-import { Typography } from "src/shared/ui/components/typography";
+import { useLettersQuery } from "~/entities/letter";
+import { buttonVariants } from "~/shared/ui/components/button";
+import { Stepper } from "~/shared/ui/components/stepper";
+import { Typography } from "~/shared/ui/components/typography";
 import {
   IconCheck,
   IconHome,
   IconLogo,
   IconLogoWithText,
-} from "src/shared/ui/icons";
+} from "~/shared/ui/icons";
 
 import styles from "./navbar.module.css";
 
