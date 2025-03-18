@@ -13,7 +13,7 @@ export const HitYourGoal = () => {
   const totalLetters = letters.data?.length ?? 0;
   const stepperLabel = `${totalLetters} out of 5`;
 
-  const isGoalReached = totalLetters > 5;
+  const isGoalReached = totalLetters >= 5;
 
   if (isGoalReached) {
     return null;

@@ -3,7 +3,12 @@ import { useLettersQuery } from "src/entities/letter";
 import { Button } from "src/shared/ui/components/button";
 import { Stepper } from "src/shared/ui/components/stepper";
 import { Typography } from "src/shared/ui/components/typography";
-import { IconHome, IconLogo, IconLogoWithText } from "src/shared/ui/icons";
+import {
+  IconCheck,
+  IconHome,
+  IconLogo,
+  IconLogoWithText,
+} from "src/shared/ui/icons";
 
 import styles from "./navbar.module.css";
 
@@ -12,6 +17,7 @@ export const Navbar = () => {
 
   const totalLetters = letters.data?.length ?? 0;
   const stepperLabel = `${totalLetters}/5 applications generated`;
+  const isGoalReached = totalLetters >= 5;
 
   return (
     <nav className={styles.container}>
@@ -24,7 +30,11 @@ export const Navbar = () => {
           <Typography className={styles.stepperLabel}>
             {stepperLabel}
           </Typography>
-          <Stepper totalSteps={5} currentStep={totalLetters} />
+          {isGoalReached ? (
+            <IconCheck />
+          ) : (
+            <Stepper totalSteps={5} currentStep={totalLetters} />
+          )}
         </div>
         <Button variant="icon">
           <IconHome />
