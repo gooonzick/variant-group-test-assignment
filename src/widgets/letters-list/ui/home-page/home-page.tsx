@@ -4,7 +4,7 @@ import { useLettersQuery } from "~/entities/letter";
 import { buttonVariants, Typography } from "~/shared/ui/components";
 import { IconPlus } from "~/shared/ui/icons";
 
-import { Card } from "../card/card";
+import { Card } from "../letter-card/letter-card";
 import styles from "./home-page.module.css";
 
 export const HomePage = () => {

@@ -1,5 +1,5 @@
-import { HomePage } from "~/pages/home";
+import { LettersList } from "~/widgets/letters-list";
 
 export default function Page() {
-  return <HomePage />;
+  return <LettersList />;
 }

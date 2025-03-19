@@ -2,7 +2,7 @@ import { useRef } from "react";
 import { FormProvider } from "react-hook-form";
 
 import { useResizeObserver } from "~/shared/hooks/use-resize-observer";
-import { Button, Typography } from "~/shared/ui/components";
+import { Button, Card, Typography } from "~/shared/ui/components";
 import { IconCopy } from "~/shared/ui/icons";
 
 import {
@@ -43,7 +43,7 @@ export const LetterBuilder = ({ onSubmit, letter, values }: Props) => {
           <LetterForm values={values} onSubmit={onSubmit} content={letter} />
         </FormProvider>
       </div>
-      <div className={styles.letterPreview} style={{ height }}>
+      <Card className={styles.letterPreview} style={{ height }}>
         {isSubmitting ? (
           <Loader />
         ) : (
@@ -63,7 +63,7 @@ export const LetterBuilder = ({ onSubmit, letter, values }: Props) => {
             </div>
           </>
         )}
-      </div>
+      </Card>
     </div>
   );
 };

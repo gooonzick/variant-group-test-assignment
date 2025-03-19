@@ -3,17 +3,17 @@ import { href, Link } from "react-router";
 
 import type { Letter } from "~/entities/letter";
 import { lettersOptions, useDeleteLetterMutation } from "~/entities/letter";
-import { Button, Typography } from "~/shared/ui/components";
+import { Button, Card, Typography } from "~/shared/ui/components";
 import { IconCopy, IconTrash } from "~/shared/ui/icons";
 
-import styles from "./card.module.css";
+import styles from "./letter-card.module.css";
 
 type CardProps = {
   content: string;
   letter: Letter;
 };
 
-export const Card = ({ content, letter }: CardProps) => {
+export const LetterCard = ({ content, letter }: CardProps) => {
   const queryClient = useQueryClient();
   const deleteLetter = useDeleteLetterMutation();
 
@@ -32,7 +32,7 @@ export const Card = ({ content, letter }: CardProps) => {
   };
 
   return (
-    <div className={styles.container}>
+    <Card className={styles.container}>
       <div className={styles.preview}>
         <Typography className={styles.content}>{content}</Typography>
         <div className={styles.fade}></div>
@@ -56,6 +56,6 @@ export const Card = ({ content, letter }: CardProps) => {
           <IconCopy />
         </Button>
       </div>
-    </div>
+    </Card>
   );
 };

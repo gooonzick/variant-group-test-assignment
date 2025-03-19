@@ -1,4 +1,5 @@
 export * from "./button/button";
+export * from "./card/card";
 export * from "./container/container";
 export * from "./spinner/spinner";
 export * from "./stepper/stepper";
