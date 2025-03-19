@@ -7,7 +7,15 @@ const LETTERS_STORAGE_KEY = "letters";
 export class LettersApiClient {
   async getLetters() {
     const data = localStorage.getItem(LETTERS_STORAGE_KEY) || "[]";
-    const letters = LettersStorageSchema.parse(JSON.parse(data));
+
+    const { data: letters, error } = LettersStorageSchema.safeParse(
+      JSON.parse(data)
+    );
+
+    if (error) {
+      console.error("Error parsing letters storage data", error);
+      return [];
+    }
 
     return letters;
   }
