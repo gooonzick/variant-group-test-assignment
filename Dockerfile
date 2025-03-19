@@ -14,6 +14,7 @@ WORKDIR /app
 COPY package.json pnpm-lock.yaml ./
 RUN pnpm install
 COPY . ./
+RUN echo $VITE_OPEN_AI_KEY
 RUN pnpm build
 
 # Stage 2: Serve the React app with Nginx
